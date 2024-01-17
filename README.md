@@ -1,30 +1,52 @@
-# React + TypeScript + Vite
+# README - Projeto CRUD Simples em React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um projeto simples de CRUD (Create, Read, Update, Delete) desenvolvido em React. O aplicativo permite adicionar, marcar como concluído, e excluir tarefas/to-dos. Abaixo, você encontrará uma breve documentação para entender a estrutura e funcionamento do projeto.
 
-Currently, two official plugins are available:
+## Estrutura do Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O projeto está estruturado da seguinte maneira:
 
-## Expanding the ESLint configuration
+- src
+  - components
+    - Card.tsx: Componente responsável por exibir cada to-do em um cartão.
+  - App.css: Estilos CSS para o componente App.
+  - App.tsx: Componente principal que contém a lógica do CRUD.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Componentes Principais
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### App.tsx
+
+Este componente é a peça central do aplicativo e contém a lógica principal do CRUD. Abaixo estão as principais funcionalidades e métodos implementados:
+
+- ### Estado do Componente:
+  
+  - #### todoInput: Estado para armazenar o valor do campo de input.
+  - #### todos: Estado para armazenar a lista de to-dos.
+
+- ### LocalStorage:
+  - #### Utiliza o localStorage para armazenar e recuperar os to-dos. Os  to-dos são salvos no localStorage com a chave @codersList: todos.
+
+- ### Métodos:
+  - #### handleAddTodo: Adiciona um novo to-do à lista.
+  - ### handleInputChange: Atualiza o estado todoInput conforme o usuário digita.
+  - ### completedTodo: Marca um to-do como concluído ou não concluído.
+  - ### deleteTodo: Exclui um to-do da lista.
+  
+- ### Renderização:
+  - ### Renderiza um formulário para adicionar novos to-dos.
+  - ### Mapeia a lista de to-dos e renderiza um componente Card para cada to-do. 
+  
+- ### Card.tsx:
+  Este componente é responsável por exibir um to-do em um cartão. Recebe as propriedades todo, completedTodo, e deleteTodo para exibir as informações e fornecer interatividade.
+
+
+- ### Utilização do Projeto
+- Clone o repositório.
+- Instale as dependências usando npm install.
+- Execute o projeto com npm run dev.
+
+- Acesse a aplicação em http://localhost:5173.
+
+# Divirta-se explorando e modificando o projeto conforme necessário!
